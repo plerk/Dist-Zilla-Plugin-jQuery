@@ -161,3 +161,9 @@ sub gather_files
 __PACKAGE__->meta->make_immutable;
 
 1;
+
+=head1 SEE ALSO
+
+L<Resource::Pack::jQuery>
+
+=cut

@@ -39,6 +39,8 @@ Which directory to put jQuery into.
 
 Where to put jQuery.  Choices are:
 
+=over 4
+
 =item build
 
 This puts jQuery in the directory where the dist is currently
@@ -50,11 +52,17 @@ This puts jQuery in the root directory (The same directory
 that contains F<dist.ini>).  It will also be included in the
 built distribution.
 
+=back
+
 =head1 METHODS
 
 =head2 $plugin-E<gt>gather_files
 
 This method places the fetched jQuery sources into your distribution.
+
+=head1 SEE ALSO
+
+L<Resource::Pack::jQuery>
 
 =head1 AUTHOR
 
