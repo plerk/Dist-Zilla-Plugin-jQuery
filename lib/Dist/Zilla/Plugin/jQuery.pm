@@ -2,6 +2,7 @@ package Dist::Zilla::Plugin::jQuery;
 
 # TODO: option to include MIT license information
 #       in COPYRIGHT AND LICENSE section
+# TODO: cache
 
 use strict;
 use warnings;
