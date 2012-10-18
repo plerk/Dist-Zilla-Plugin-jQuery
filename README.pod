@@ -1,0 +1,69 @@
+=head1 NAME
+
+Dist::Zilla::Plugin::jQuery - Include jQuery in your distribution
+
+=head1 VERSION
+
+version 0.01
+
+=head1 SYNOPSIS
+
+ [jQuery]
+ use_bundled = 1
+
+=head1 DESCRIPTION
+
+This plugin fetches jQuery from the Internet (or a bundled version)
+using L<Resource::Pack::jQuery> and includes it into your distribution.
+
+=head1 ATTRIBUTES
+
+=head2 use_bundled
+
+Use the version of jQuery bundled with L<Resource::Pack::jQuery>.
+
+=head2 version
+
+The jQuery version to download.  Only used if use_bundled is false.
+
+=head2 minified
+
+Whether or not the JavaScript should be minified.  Defaults to true.
+Only used if use_bundled is false.
+
+=head2 dir
+
+Which directory to put jQuery into.
+
+=head2 location
+
+Where to put jQuery.  Choices are:
+
+=item build
+
+This puts jQuery in the directory where the dist is currently
+being built, where it will be incorporated into the dist.
+
+=item root
+
+This puts jQuery in the root directory (The same directory
+that contains F<dist.ini>).  It will also be included in the
+built distribution.
+
+=head1 METHODS
+
+=head2 $plugin-E<gt>gather_files
+
+This method places the fetched jQuery sources into your distribution.
+
+=head1 AUTHOR
+
+Graham Ollis <perl@wdlabs.com>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2012 by Graham Ollis.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
