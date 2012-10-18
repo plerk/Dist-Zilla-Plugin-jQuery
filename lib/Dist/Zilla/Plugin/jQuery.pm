@@ -1,5 +1,8 @@
 package Dist::Zilla::Plugin::jQuery;
 
+# TODO: option to include MIT license information
+#       in COPYRIGHT AND LICENSE section
+
 use strict;
 use warnings;
 use v5.10;
