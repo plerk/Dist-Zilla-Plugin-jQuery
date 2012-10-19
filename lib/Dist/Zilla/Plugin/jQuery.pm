@@ -219,7 +219,7 @@ __PACKAGE__->meta->make_immutable;
 
 1;
 
-=head1 CAVEAT
+=head1 CAVEATS
 
 If you bundle jQuery into your distribution, you should update the copyright
 section to include a notice that bundled copy of jQuery is copyright
