@@ -116,7 +116,7 @@ has location => (
   default => 'build',
 );
 
-=item cache
+=head2 cache
 
 Cache the results so that the Internet is required less frequently.
 Defaults to 0.
