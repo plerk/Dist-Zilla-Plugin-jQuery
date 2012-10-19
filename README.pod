@@ -9,31 +9,42 @@ version 0.01
 =head1 SYNOPSIS
 
  [jQuery]
- use_bundled = 1
+ version = 1.8.2
+ minified = both
 
 =head1 DESCRIPTION
 
-This plugin fetches jQuery from the Internet (or a bundled version)
+This plugin fetches jQuery from the Internet
 using L<Resource::Pack::jQuery> and includes it into your distribution.
 
 =head1 ATTRIBUTES
 
-=head2 use_bundled
-
-Use the version of jQuery bundled with L<Resource::Pack::jQuery>.
-
 =head2 version
 
-The jQuery version to download.  Only used if use_bundled is false.
+The jQuery version to download.  Defaults to 1.8.2 (the default may
+change in the future).
 
 =head2 minified
 
-Whether or not the JavaScript should be minified.  Defaults to true.
-Only used if use_bundled is false.
+Whether or not the JavaScript should be minified.  Defaults to both.
+Possible values.
+
+=over 4
+
+=item * yes
+
+=item * no
+
+=item * both
+
+=back
 
 =head2 dir
 
-Which directory to put jQuery into.
+Which directory to put jQuery into.  Defaults to public/js under
+the same location of your main module, so if your module is 
+Foo::Bar (lib/Foo/Bar.pm), then the default dir will be 
+lib/Foo/Bar/public/js.
 
 =head2 location
 
@@ -54,11 +65,24 @@ built distribution.
 
 =back
 
+=item cache
+
+Cache the results so that the Internet is required less frequently.
+Defaults to 0.
+
 =head1 METHODS
 
 =head2 $plugin-E<gt>gather_files
 
 This method places the fetched jQuery sources into your distribution.
+
+=head1 CAVEAT
+
+If you bundle jQuery into your distribution, you should update the copyright
+section to include a notice that bundled copy of jQuery is copyright
+the jQuery Project and is licensed under eitherthe MIT or GPLv2 license.
+This module does not bundle jQuery, but its dependency L<Resource::Pack::jQuery>
+does.
 
 =head1 SEE ALSO
 
