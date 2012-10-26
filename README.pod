@@ -1,3 +1,5 @@
+=pod
+
 =head1 NAME
 
 Dist::Zilla::Plugin::jQuery - Include jQuery in your distribution
