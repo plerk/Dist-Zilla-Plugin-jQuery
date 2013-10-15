@@ -1,103 +1,86 @@
-=pod
+# Dist::Zilla::Plugin::jQuery
 
-=head1 NAME
+Include jQuery in your distribution
 
-Dist::Zilla::Plugin::jQuery - Include jQuery in your distribution
+# SYNOPSIS
 
-=head1 VERSION
+    [jQuery]
+    version = 1.8.2
+    minified = both
 
-version 0.01
-
-=head1 SYNOPSIS
-
- [jQuery]
- version = 1.8.2
- minified = both
-
-=head1 DESCRIPTION
+# DESCRIPTION
 
 This plugin fetches jQuery from the Internet
-using L<Resource::Pack::jQuery> and includes it into your distribution.
+using [Resource::Pack::jQuery](http://search.cpan.org/perldoc?Resource::Pack::jQuery) and includes it into your distribution.
 
-=head1 ATTRIBUTES
+# ATTRIBUTES
 
-=head2 version
+## version
 
 The jQuery version to download.  Defaults to 1.8.2 (the default may
 change in the future).
 
-=head2 minified
+## minified
 
 Whether or not the JavaScript should be minified.  Defaults to both.
 Possible values.
 
-=over 4
+- yes
+- no
+- both
 
-=item * yes
-
-=item * no
-
-=item * both
-
-=back
-
-=head2 dir
+## dir
 
 Which directory to put jQuery into.  Defaults to public/js under
 the same location of your main module, so if your module is 
 Foo::Bar (lib/Foo/Bar.pm), then the default dir will be 
 lib/Foo/Bar/public/js.
 
-=head2 location
+## location
 
 Where to put jQuery.  Choices are:
 
-=over 4
+- build
 
-=item build
+    This puts jQuery in the directory where the dist is currently
+    being built, where it will be incorporated into the dist.
 
-This puts jQuery in the directory where the dist is currently
-being built, where it will be incorporated into the dist.
+- root
 
-=item root
+    This puts jQuery in the root directory (The same directory
+    that contains `dist.ini`).  It will also be included in the
+    built distribution.
 
-This puts jQuery in the root directory (The same directory
-that contains F<dist.ini>).  It will also be included in the
-built distribution.
-
-=back
-
-=head2 cache
+## cache
 
 Cache the results so that the Internet is required less frequently.
 Defaults to 0.
 
-=head1 METHODS
+# METHODS
 
-=head2 $plugin-E<gt>gather_files
+## $plugin->gather\_files
 
 This method places the fetched jQuery sources into your distribution.
 
-=head1 CAVEATS
+# CAVEATS
 
 If you bundle jQuery into your distribution, you should update the copyright
 section to include a notice that bundled copy of jQuery is copyright
 the jQuery Project and is licensed under eitherthe MIT or GPLv2 license.
-This module does not bundle jQuery, but its dependency L<Resource::Pack::jQuery>
+This module does not bundle jQuery, but its dependency [Resource::Pack::jQuery](http://search.cpan.org/perldoc?Resource::Pack::jQuery)
 does.
 
-=head1 SEE ALSO
+# SEE ALSO
 
-L<Resource::Pack::jQuery>
+[Resource::Pack::jQuery](http://search.cpan.org/perldoc?Resource::Pack::jQuery)
 
-=head1 AUTHOR
+# AUTHOR
 
 Graham Ollis <perl@wdlabs.com>
 
-=head1 COPYRIGHT AND LICENSE
+# COPYRIGHT AND LICENSE
 
 This software is copyright (c) 2012 by Graham Ollis.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
-
