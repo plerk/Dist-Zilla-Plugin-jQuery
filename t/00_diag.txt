@@ -1,0 +1,10 @@
+Dist::Zilla::Role::FileGatherer
+ExtUtils::MakeMaker
+File::HomeDir
+File::Temp
+Moose
+Moose::Util::TypeConstraints
+Path::Class
+Resource::Pack::jQuery
+Test::More
+namespace::autoclean
