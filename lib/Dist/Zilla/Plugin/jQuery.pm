@@ -200,7 +200,7 @@ sub gather_files
     {
       $self->add_file(
         Dist::Zilla::File::InMemory->new(
-          content => scalar $child->slurp,
+          content => scalar $child->slurp(iomode => '<:encoding(UTF-8)'),
           name    => dir( $self->dir )->file( $child->basename )->stringify,
         ),
       );
@@ -209,7 +209,7 @@ sub gather_files
     {
       my $file = $self->zilla->root->file( $self->dir, $child->basename );
       $file->parent->mkpath(0, 0755);
-      $file->spew( scalar $child->slurp );
+      $file->spew( iomode => '>:encoding(UTF-8)', scalar $child->slurp(iomode => '<:encoding(UTF-8)') );
     }
   }
   return;

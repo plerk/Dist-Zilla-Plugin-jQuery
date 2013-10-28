@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - read and write in unicode
 
 0.01      2012-10-26 11:43:11 America/New_York
-- initial version
+  - initial version
