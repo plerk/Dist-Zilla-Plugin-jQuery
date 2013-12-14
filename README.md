@@ -11,7 +11,7 @@ Include jQuery in your distribution
 # DESCRIPTION
 
 This plugin fetches jQuery from the Internet
-using [Resource::Pack::jQuery](http://search.cpan.org/perldoc?Resource::Pack::jQuery) and includes it into your distribution.
+using [Resource::Pack::jQuery](https://metacpan.org/pod/Resource::Pack::jQuery) and includes it into your distribution.
 
 # ATTRIBUTES
 
@@ -67,12 +67,12 @@ This method places the fetched jQuery sources into your distribution.
 If you bundle jQuery into your distribution, you should update the copyright
 section to include a notice that bundled copy of jQuery is copyright
 the jQuery Project and is licensed under either the MIT or GPLv2 license.
-This module does not bundle jQuery, but its dependency [Resource::Pack::jQuery](http://search.cpan.org/perldoc?Resource::Pack::jQuery)
+This module does not bundle jQuery, but its dependency [Resource::Pack::jQuery](https://metacpan.org/pod/Resource::Pack::jQuery)
 does.
 
 # SEE ALSO
 
-[Resource::Pack::jQuery](http://search.cpan.org/perldoc?Resource::Pack::jQuery)
+[Resource::Pack::jQuery](https://metacpan.org/pod/Resource::Pack::jQuery)
 
 # AUTHOR
 
