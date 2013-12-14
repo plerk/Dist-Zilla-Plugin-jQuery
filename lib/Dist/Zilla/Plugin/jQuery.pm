@@ -2,7 +2,6 @@ package Dist::Zilla::Plugin::jQuery;
 
 use strict;
 use warnings;
-use v5.10;
 use Moose;
 use Resource::Pack::jQuery;
 use File::Temp qw( tempdir );
