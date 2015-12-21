@@ -1,4 +1,4 @@
-# Dist::Zilla::Plugin::jQuery
+# Dist::Zilla::Plugin::jQuery [![Build Status](https://secure.travis-ci.org/plicease/Dist-Zilla-Plugin-jQuery.png)](http://travis-ci.org/plicease/Dist-Zilla-Plugin-jQuery)
 
 Include jQuery in your distribution
 
@@ -76,7 +76,7 @@ does.
 
 # AUTHOR
 
-Graham Ollis <perl@wdlabs.com>
+Graham Ollis &lt;perl@wdlabs.com>
 
 # COPYRIGHT AND LICENSE
 
