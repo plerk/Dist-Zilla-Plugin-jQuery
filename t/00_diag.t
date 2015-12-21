@@ -1,36 +1,70 @@
 use strict;
 use warnings;
+use Config;
 use Test::More tests => 1;
-BEGIN { eval q{ use EV } }
-eval q{ 
-  use FindBin ();
-  use File::Spec;
-  1;
-} || die $@;
+
+# This .t file is generated.
+# make changes instead to dist.ini
+
+my %modules;
+my $post_diag;
+
+$modules{$_} = $_ for qw(
+  Dist::Zilla::Role::FileGatherer
+  ExtUtils::MakeMaker
+  File::HomeDir
+  File::Temp
+  Moose
+  Moose::Util::TypeConstraints
+  Path::Class
+  Resource::Pack::jQuery
+  Test::More
+  namespace::autoclean
+);
+
+
+
+my @modules = sort keys %modules;
+
+sub spacer ()
+{
+  diag '';
+  diag '';
+  diag '';
+}
 
 pass 'okay';
-
-my @modules;
-do {
-  my $fh;
-  open($fh, '<', File::Spec->catfile($FindBin::Bin, '00_diag.txt'));
-  @modules = <$fh>;
-  close $fh;
-  chomp @modules;
-};
 
 my $max = 1;
 $max = $_ > $max ? $_ : $max for map { length $_ } @modules;
 our $format = "%-${max}s %s"; 
 
-diag '';
-diag '';
-diag '';
+spacer;
 
-diag sprintf $format, 'perl ', $^V;
+my @keys = sort grep /(MOJO|PERL|\A(LC|HARNESS)_|\A(SHELL|LANG)\Z)/i, keys %ENV;
 
-require(File::Spec->catfile($FindBin::Bin, '00_diag.pl'))
-  if -e File::Spec->catfile($FindBin::Bin, '00_diag.pl');
+if(@keys > 0)
+{
+  diag "$_=$ENV{$_}" for @keys;
+  
+  if($ENV{PERL5LIB})
+  {
+    spacer;
+    diag "PERL5LIB path";
+    diag $_ for split $Config{path_sep}, $ENV{PERL5LIB};
+    
+  }
+  elsif($ENV{PERLLIB})
+  {
+    spacer;
+    diag "PERLLIB path";
+    diag $_ for split $Config{path_sep}, $ENV{PERLLIB};
+  }
+  
+  spacer;
+}
+
+diag sprintf $format, 'perl ', $];
 
 foreach my $module (@modules)
 {
@@ -46,6 +80,11 @@ foreach my $module (@modules)
   }
 }
 
-diag '';
-diag '';
-diag '';
+if($post_diag)
+{
+  spacer;
+  $post_diag->();
+}
+
+spacer;
+
