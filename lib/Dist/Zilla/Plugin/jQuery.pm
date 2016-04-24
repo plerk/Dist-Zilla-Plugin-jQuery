@@ -206,7 +206,7 @@ sub gather_files
     }
     else
     {
-      my $file = $self->zilla->root->file( $self->dir, $child->basename );
+      my $file = dir($self->zilla->root)->file( $self->dir, $child->basename );
       $file->parent->mkpath(0, 0755);
       $file->spew( iomode => '>:encoding(UTF-8)', scalar $child->slurp(iomode => '<:encoding(UTF-8)') );
     }

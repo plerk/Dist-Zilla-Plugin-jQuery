@@ -76,7 +76,7 @@ does.
 
 # AUTHOR
 
-Graham Ollis &lt;perl@wdlabs.com>
+Graham Ollis <perl@wdlabs.com>
 
 # COPYRIGHT AND LICENSE
 
