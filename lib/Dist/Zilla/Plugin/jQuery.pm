@@ -7,7 +7,7 @@ use Resource::Pack::jQuery;
 use File::Temp qw( tempdir );
 use Path::Class qw( file dir );
 use Moose::Util::TypeConstraints qw( enum );
-use File::HomeDir;
+use File::Glob qw( bsd_glob );
 
 with 'Dist::Zilla::Role::FileGatherer';
 
@@ -140,7 +140,8 @@ has _cache_dir => (
     }
     else
     {
-      my $dir = dir( File::HomeDir->my_dist_data("Dist-Zilla-Plugin-jQuery", { create => 1 }) );
+      my $dir = dir( bsd_glob '~/.local/share/Perl/dist/Dist-Zilla-Plugin-jQuery' );
+      $dir->mkpath(0,0700);
       $dir = $dir->subdir( $self->version, $self->minified );
       unless(-d $dir)
       {
